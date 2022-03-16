@@ -1,0 +1,390 @@
+.bg-body
+	position: relative
+	&:after
+		position: absolute
+		content: ' '
+		top: 0px
+		left: 0px
+		width: 100%
+		height: 100%
+		background-image: url(../img/bg-help.png)
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
+
+.bg-body, .fp-enabled
+    //height: calc(100% - 140px) !important
+
+.help
+	position: relative
+	z-index: 3
+	&__wrap
+		//margin-top: 140px
+		//height: calc(100% - 140px) !important
+
+	&__nav
+		position: absolute
+		top: 0px
+		//position: fixed
+		z-index: 4
+		//top: 50px
+		left: 60px
+		width: calc(100% - 120px)
+		margin: 0 auto
+		background-color: rgba(0, 0, 0, 0.3)
+		.main-header__lang
+			display: flex
+			justify-content: center
+			padding: 18px 0
+			margin: 0px
+
+		.language-chooser li 
+			padding: 0 20px
+			font-family: roboto
+			a
+				color: #fff
+
+			&.lang-ua.active
+				font-weight: 700
+
+			&:not(:last-child)::after
+				display: none
+
+	&__slide
+		position: relative
+		//padding: 80px 10px
+		//padding-top: 140px
+		//height: calc(100vh - 140px) !important
+		//padding-bottom: 116px
+		//padding-top: 210px
+		
+		&:after
+			position: absolute
+			content: ' '
+			z-index: -1
+			top: 0
+			left: 0px
+			width: 100%
+			height: 100%
+			background-color: rgba(0, 0, 0, 0.8)
+			opacity: 0.6
+
+	&__title
+		font-size: 110px	
+		line-height: 1.2
+		color: #fff
+		text-align: center
+		text-transform: uppercase
+		padding-bottom: 40px
+		font-weight: 900
+		+media(mdx)
+			font-size: 80px
+		+media(sm)
+			font-size: 40px
+
+	&__subtitle
+		font-size: 64px
+		line-height: 1.2
+		color: #fff
+		text-align: center
+		text-transform: uppercase
+		padding-bottom: 65px
+		font-weight: 900
+		+media(mdx)
+			font-size: 40px
+		+media(sm)
+			font-size: 30px
+		span
+			color: #f91b1b
+
+	&__decor
+		position: relative
+		width: 20px
+		height: 40px
+		margin: 0 auto
+		margin-bottom: 80px
+		&:after
+			position: absolute
+			content: ' '
+			width: 24px
+			height: 24px
+			border-left: 2px solid #ffffff
+			border-bottom: 2px solid #ffffff
+			transform: rotate(-45deg)
+
+	&__link
+		cursor: pointer
+		position: relative
+		z-index: 2
+		display: block
+		max-width: 380px
+		width: 100%
+		font-size: 24px
+		line-height: 1.2
+		color: #000000
+		background-color: #ffffff
+		border: none
+		outline: none
+		border-radius: 5px
+		text-align: center
+		text-transform: uppercase
+		padding: 10px
+		margin: 0 auto
+		font-weight: 700
+
+	&__info
+		position: relative
+		z-index: 2
+		max-width: 1200px
+		padding-bottom: 115px
+		margin: 0 auto
+		&--container
+			max-width: 985px
+
+	&__text
+		padding-bottom: 25px
+		p
+			font-size: 36px
+			line-height: 1.2
+			color: #fff
+			text-align: center
+			padding-bottom: 1.5em
+			font-family: roboto
+			+media(mdx)
+				font-size: 30px
+			+media(sm)
+				font-size: 25px
+
+	&__desc
+		p
+			font-size: 24px
+			line-height: 1.2
+			color: #fff
+			font-family: roboto
+
+	&__block	
+		font-size: 24px
+		line-height: 1.2
+		color: #fff
+		text-align: center
+		text-transform: uppercase
+		padding-bottom: 16px
+		font-weight: 900
+
+	&__price
+		font-size: 64px
+		line-height: 1.2
+		color: #fff
+		text-align: center
+		font-family: roboto
+		font-weight: 300
+		+media(mdx)
+			font-size: 40px
+		+media(sm)
+			font-size: 30px
+		span
+			display: block
+			font-size: 36px
+			text-transform: uppercase
+			font-weight: 
+			+media(mdx)
+				font-size: 30px
+			+media(sm)
+				font-size: 20px
+
+	&__row
+		max-width: 1200px
+		width: 100%
+		margin: 0 auto
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding-bottom: 60px
+		+media(sm)
+			flex-wrap: wrap
+			flex-direction: column
+			padding-bottom: 30px
+
+	&__col
+		margin-bottom: 40px
+		+media(sm)
+			max-width: 150px
+		&:not(:last-child)
+			margin-right: 80px
+			+media(sm)
+				margin-right: 0px
+
+	&__elem
+		max-width: 1020px
+		margin: 0 auto
+		p
+			font-size: 24px
+			line-height: 1.2
+			color: #fff
+			text-align: center
+			font-family: roboto
+			&:not(:last-child)		
+				padding-bottom: 0.8em	
+
+	&__inner
+		position: relative
+		z-index: 2
+		margin: 0 100px
+		margin-top: auto
+		max-height: calc(100vh - 100px)
+		overflow-y: auto
+		+media(mdx)
+			margin: 0 50px
+		+media(sm)
+			margin: 0 30px
+
+	&__reports
+		font-size: 48px
+		line-height: 1.2
+		color: #ffffff
+		text-transform: uppercase
+		text-align: center
+		padding-bottom: 80px
+		font-family: roboto
+		font-weight: 300
+
+	&__box
+		display: flex
+		align-items: center
+		justify-content: space-between
+		background-color: #fff
+		box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1)
+		border-radius: 10px
+		padding: 30px
+		padding-bottom: 0px
+		margin-bottom: 30px
+		+media(sm)
+			flex-direction: column
+			align-items: flex-start
+
+	&__details
+		font-size: 18px
+		line-height: 1.2
+		color: #0F2742
+		padding-right: 30px
+		font-family: roboto
+		padding-bottom: 30px
+		font-weight: 300
+		+media(sm)
+			padding-right: 0px
+
+	&__wrapper
+		display: flex
+		padding-bottom: 30px
+
+	&__item
+		cursor: pointer
+		font-size: 24px
+		line-height: 1.25
+		color: #0F2742
+		text-transform: uppercase
+		font-family: roboto
+		font-weight: 200
+		&:not(:last-child)
+			margin-right: 20px
+		&--view,
+		&--load
+			width: 30px
+			height: 30px
+			background-size: 30px
+			background-repeat: no-repeat
+
+		&--view
+			background-image: url(../img/icons/view.svg)
+
+		&--load
+			background-image: url(../img/icons/load.svg)
+			
+	&__show
+		display: block
+		cursor: pointer
+		background-image: url(../img/icons/show.svg)
+		background-position: top center
+		background-size: 30px
+		background-repeat: no-repeat
+		font-size: 18px
+		line-height: 1.2
+		border: none
+		outline: none
+		background-color: transparent
+		color: #fff
+		padding: 0px
+		padding-top: 46px
+		margin: 0 auto
+		margin-top: 110px
+		font-family: roboto
+		font-weight: 300
+
+
+.iScrollIndicator
+	background: #fff !important
+	//height: calc(100% - 140px) 
+
+.fp-tableCell
+	//vertical-align: top
+	//display: flex
+	//flex-direction: column
+
+.fp-scroller
+	//margin-top: auto
+	//max-height: calc(100vh - 140px)
+	//overflow-y: auto
+
+.fp-scrollable
+	//display: flex
+	//flex-direction: column
+
+.fp-tableCell
+	vertical-align: bottom
+
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span,
+#fp-nav ul li a.active span, 
+.fp-slidesNav ul li a.active span, 
+#fp-nav ul li:hover a.active span, 
+.fp-slidesNav ul li:hover a.active span,
+#fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span
+	width: 20px
+	height: 20px
+	margin: 0px
+	+media(sm)
+		width: 14px
+		height: 14px
+
+#fp-nav 
+	ul li
+		a 
+			span
+				border: 2px solid #fff
+
+			&.active
+				span
+					background: #fff
+
+	&.fp-right
+		right: 60px
+		+media(mdx)
+			right: 15px
+		+media(sm)
+			right: 8px
+
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span
+	left: 0px
+	top: 0px
+
+#fp-nav ul 
+	li
+		width: 20px
+		height: 20px
+		margin: 0px	
+		+media(sm)
+			width: 14px
+			height: 14px
+		&:not(:last-child)
+			margin-bottom: 20px

@@ -1,0 +1,155 @@
+@import 'responsive'
+
+body
+	margin: 0
+	padding: 0
+	width: 100%
+	min-height: 100vh
+	overflow-x: hidden
+	color: #333333
+	background-color: #fff
+	font-size: 16px
+	line-height: 1.2
+	font-weight: normal
+	font-style: normal
+	font-family: "Montserrat"
+
+*
+	box-sizing: border-box
+
+img
+	max-width: 100%
+	height: auto
+
+.container
+	max-width: 1250px
+	width: 100%
+	margin: 0 auto
+	padding: 0 10px
+	&--header
+		+media(sm)
+			padding: 0
+
+	&--inner
+		max-width: 1920px
+		padding: 0px
+
+	&--block
+		max-width: 1620px
+
+	&--fonds
+		max-width: 1045px
+
+	&--team
+		max-width: 1080px
+
+
+
+.svg
+	position: absolute
+	width: 0px
+	height: 0px
+
+.title
+	//position: relative
+	//width: max-content
+	display: flex
+	justify-content: center
+	align-items: center
+	font-size: 60px
+	line-height: 1.2
+	color: #ffffff
+	text-transform: uppercase
+	//padding-right: 385px
+	text-align: right
+	margin: 0 auto
+	margin-bottom: 100px
+	font-weight: 200
+	+media(mdx)
+		margin-bottom: 70px
+	+media(md)
+		font-size: 42px
+	+media(sm)
+		font-size: 32px
+	&:after
+		//position: absolute
+		content: ' '
+		//top: calc(50% - 1px)
+		//right: 0px
+		max-width: 285px
+		flex-grow: 1
+		width: 100%
+		height: 2px
+		background-color: #fff
+		margin-left: 70px
+		+media(md)
+			max-width: 140px
+		+media(xs)
+			display: none
+
+	&--inner
+		color: #003a7a
+		&:after
+			background-color: #003a7a
+
+	&--content
+		margin-bottom: 70px
+
+	&--doc
+		justify-content: flex-start
+		padding-left: 28px	
+		margin-bottom: 83px
+		+media(mdx)
+			padding-left: 0px
+			margin-bottom: 70px
+
+	&--footer
+		justify-content: flex-end
+		padding-right: 58px
+		margin-bottom: 50px
+		+media(md)
+			justify-content: center
+		&:after
+			display: none
+			+media(md)
+				display: block
+
+
+.btn
+	cursor: pointer
+	font: inherit
+	display: block
+	width: 100%
+	font-size: 18px
+	border: none
+	outline: none
+	text-align: center
+	text-transform: uppercase
+	padding: 14px 5px
+	transition: 0.3s background-color, 0.3s color
+	&--info
+		max-width: 230px
+		color: #ffffff
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)
+		border-radius: 5px
+		background-color: #003a7a
+		margin-top: 25px
+		margin-bottom: 40px
+		+media(sm)
+			margin-top: 0px
+		&:hover
+			background-color: #001b38
+
+	&--content
+		max-width: 410px
+		color: #003a7a
+		border-radius: 27px
+		border: 2px solid #003a7a
+		background-color: #ffffff
+		margin-bottom: 35px
+		transition: 0.3s background-color, 0.3s color
+		&:hover
+			background-color: #003a7a
+			color: #fff
+		span
+			font-weight: 700

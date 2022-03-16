@@ -1,0 +1,226 @@
+@import 'responsive'
+
+.block
+	background: radial-gradient(circle at 50% 10%, transparent 45%, rgba(208, 208, 208,1) 100%), url(../img/block.jpg)
+	background-size: cover
+	+media(sm)
+		background: radial-gradient(circle at 50% 10%, transparent 65%, rgba(208, 208, 208,1) 100%), url(../img/block.jpg)
+
+	.main-header
+		position: fixed
+		top: 0px
+		width: 100%
+		z-index: 11
+		transition: background-color 0.5s ease-in
+		&+section
+			padding-top: 214px
+			+media(md)
+				padding-top: 161px
+			+media(sm)
+				padding-top: 130px
+
+.main-header
+	&--inner
+		background-color: #003a7a
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+		.main-header__description
+			color: #fff
+
+		.line-burger
+			background-color: #fff
+			&:after,
+			&:before
+				background-color: #fff
+		.main-header__list
+			background-color: #003a7a
+
+		.main-header__link
+			color: #fff
+
+		.language-chooser li
+			a
+				color: #fff
+				&:hover
+					text-shadow: 0px 0.5px 0px #fff, 0.5px 0px 0px #fff, 0px -0.5px 0px #fff, -0.5px 0px 0px #fff
+			&.active a
+				text-shadow: 0px 0.5px 0px #fff, 0.5px 0px 0px #fff, 0px -0.5px 0px #fff, -0.5px 0px 0px #fff
+				&:hover
+					text-shadow: 0px 0.5px 0px #fff, 0.5px 0px 0px #fff, 0px -0.5px 0px #fff, -0.5px 0px 0px #fff
+
+		.language-chooser li:not(:last-child):after
+			color: #fff
+
+		.main-header__link::after
+			background-color: #fff
+
+	&__row
+		position: relative
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		align-items: center
+		padding: 0 10px
+		padding-top: 25px
+		+media(md)
+			justify-content: space-between
+		+media(sm)
+			padding: 0 10px
+			padding-top: 25px
+
+	&__wrap
+		margin-bottom: 25px
+		+media(sm)
+			margin-top: 5px
+
+	&__list
+		display: flex
+		align-items: center
+		+media(md)
+			justify-content: center
+		+media(sm)
+			display: none
+			width: 100%
+			top: 100%
+			left: 0
+			right: 0px
+			z-index: 3
+			position: absolute
+			max-height: calc(100vh - 70px)
+			overflow-y: auto
+			overflow-x: hidden
+			padding: 0
+			background-color: #fff
+		li:first-child .main-header__link
+			margin-left: 0px	
+			+media(sm)
+				margin-left: 10px
+
+	&__description
+		font-size: 18px
+		color: #075c97
+		font-weight: bold
+		text-transform: uppercase
+		padding-right: 15px
+
+	&__link
+		position: relative
+		display: block
+		font-size: 16px
+		line-height: 1.2
+		color: #333333
+		text-transform: uppercase
+		margin: 0 20px
+		font-weight: 400
+		&:after
+			position: absolute
+			content: ' '
+			left: 0
+			bottom: -4px
+			width: 0
+			height: 2px
+			background-color: #333333
+			content: ""
+			transition: 0.3s width ease-out
+		&:hover:after
+			width: 100%
+		+media(mdx)
+			margin: 0 15px
+		+media(md)
+			margin: 0 10px
+		+media(sm)
+			margin-bottom: 15px
+
+	&__lang
+		margin-left: 30px
+		margin-bottom: 25px
+		+media(md)
+			margin-left: 16px
+
+
+.language-chooser
+	display: flex
+	align-items: center
+	li
+		font-size: 14px
+		line-height: 1
+		padding: 0px 10px
+		text-transform: uppercase
+		&:last-child
+			padding-right: 0px
+		&:not(:last-child)
+			position: relative
+			&:after
+				position: absolute
+				content: '|'
+				color: #075c97
+				top: 0px
+				right: 0px
+		a
+			display: block
+			color: #075c97
+			&:hover
+				text-shadow: 0px 0.5px 0px #075c97, 0.5px 0px 0px #075c97, 0px -0.5px 0px #075c97, -0.5px 0px 0px #075c97
+		&.active a
+			text-shadow: 0px 0.5px 0px #075c97, 0.5px 0px 0px #075c97, 0px -0.5px 0px #075c97, -0.5px 0px 0px #075c97
+			&:hover
+				text-shadow: 0px 0.5px 0px #075c97, 0.5px 0px 0px #075c97, 0px -0.5px 0px #075c97, -0.5px 0px 0px #075c97
+
+.mobile-wrap
+	display: none
+	align-items: center
+	justify-content: space-between
+	cursor: pointer
+	+media(sm)
+		display: flex
+		width: 100%
+		padding: 0px 10px
+		padding-left: 0px
+
+.line-burger
+	display: block
+	position: absolute
+	top: 50%
+	left: 0
+	width: 25px
+	height: 3px
+	background-color: #075c97
+	transition: 0.5s width
+	&:after,
+	&:before
+		content: ''
+		position: absolute
+		width: 25px
+		height: 3px
+		background-color: #075c97
+		left: 0
+		transition: 0.5s
+	&:after
+		top: calc(100% + 5px)
+	&:before
+		bottom: calc(100% + 5px)
+
+.line-active
+	width: 0
+	&:after
+		top: 9px
+		transform: rotate(-45deg)
+		transform-origin: 0 0
+	&:before
+		bottom: 9px
+		transform: rotate(45deg)
+		transform-origin: 0 100%
+
+.main-nav__toggle
+	position: relative
+	cursor: pointer
+	display: none
+	width: 25px
+	height: 25px
+	margin-top: -5px
+	+media(sm)
+		display: block
+
+.contrast-bg
+	background-color: #fff
+	transition: 0.3
+	transition: background-color 0.5s ease-in

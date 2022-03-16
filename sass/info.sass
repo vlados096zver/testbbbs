@@ -1,0 +1,101 @@
+@import 'responsive'
+
+.info
+	padding-top: 145px
+	padding-bottom: 30px
+	+media(md)
+		padding-top: 90px
+	+media(sm)
+		padding-top: 25px
+
+	&__block
+		background-image: url(../img/line.svg)
+		background-position: bottom left
+		background-repeat: no-repeat
+		background-size: contain
+		+media(md)
+			background-image: none
+
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+		+media(sm)
+			flex-direction: column
+
+	&__image
+		max-width: 600px
+		width: 100%
+		max-height: 155px
+		margin-right: 100px	
+		margin-bottom: 50px
+		+media(sm)
+			max-width: 400px
+			margin-right: 0px
+		svg 
+			display: block
+			width: 100%
+			height: 100%
+		&.animate
+			path
+				animation: custom-logo-in 2s ease-in-out 
+				animation-fill-mode: forwards
+		&.no
+			animation-duration: 0s
+
+	&__title 
+		font-size: 24px
+		line-height: 1
+		color: #929397
+		text-transform: uppercase
+		padding-bottom: 78px
+		font-weight: normal
+		+media(sm)
+			font-size: 22px
+			line-height: 1.2
+			padding-bottom: 50px
+
+	@keyframes custom-fade-in
+		0%
+			stroke-dasharray: 0 300
+			fill: transparent
+			animation-timing-function: ease-in
+		50%
+			stroke-dasharray: 150 150
+			fill: transparent
+			animation-timing-function: ease-out
+		100%
+			stroke-dasharray: 300 0
+			fill: #003a7a
+
+	path
+		stroke: #003a7a
+		stroke-width: 3px
+		fill: none
+		stroke-dasharray: 0 300
+
+	&__list
+		counter-reset: list1
+		padding-bottom: 230px
+		+media(md)
+			padding-bottom: 10px
+
+	&__box
+		position: relative
+		font-size: 18px
+		color: #333333
+		text-transform: uppercase
+		letter-spacing: 2.52px
+		padding-left: 80px
+		margin-bottom: 30px
+		&:after
+			position: absolute
+			counter-increment: list1
+			content: "00" counter(list1)  ". "
+			left: 0px
+			top: 50%
+			transform: translateY(-50%)
+			font-size: 30px
+			color: #075c97
+			text-transform: uppercase
+			font-weight: 200

@@ -1,0 +1,51 @@
+@import 'responsive'
+
+.content
+	background: radial-gradient(circle at 50% 10%, transparent 45%, rgba(208, 208, 208,1) 100%)
+	padding-top: 110px
+	padding-bottom: 120px
+	+media(md)
+		padding-bottom: 60px
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -40px
+		padding-bottom: 75px
+		+media(md)
+			margin: 0px
+			padding-bottom: 0px
+
+	&__item
+		width: calc(100% / 2 - 80px)
+		margin: 0 40px
+		margin-bottom: 45px
+		+media(md)
+			width: 100%
+			margin: 0px
+			margin-bottom: 30px
+
+	&__text
+		p
+			font-size: 16px
+			line-height: 2.3
+			color: #303030
+
+	&__image
+		display: flex
+		align-items: center
+		&:after 	
+			content: ' '
+			flex-grow: 1
+			height: 2px
+			background-color: #003a7a
+			margin-left: 60px
+			+media(xs)
+				display: none
+		path
+			stroke: #003a7a
+			fill: none
+			stroke-dasharray: 0 300
+		&.animate
+			path
+				animation: custom-fade-in 2s ease-in-out 
+				animation-fill-mode: forwards
